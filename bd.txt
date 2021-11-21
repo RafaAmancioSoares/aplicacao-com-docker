@@ -1,0 +1,12 @@
+create database ac3_rafaela;
+use ac3_rafaela;
+
+create table dadosColetados(
+	id int primary key auto_increment,
+    nome varchar(45),
+    idade int,
+    sexo char(1) check(sexo = 'F' or sexo = 'M'),
+    altura decimal(3,2)
+);
+
+select * from dadosColetados;
