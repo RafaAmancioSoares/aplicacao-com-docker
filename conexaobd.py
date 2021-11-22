@@ -4,7 +4,7 @@ from credencial import usr, pswd
 def insert_db(idCaptura, nome, idade, sexo, altura):
     try:  
         mydb = mysql.connector.connect(
-            host = "localhost",
+            host = "18.212.61.221",
             user = usr,
             password = pswd,
             database = "ac3_rafaela"
