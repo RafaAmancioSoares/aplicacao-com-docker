@@ -1,2 +1,2 @@
 usr = 'root'
-pswd = 'bandtec'
+pswd = 'urubu100'
