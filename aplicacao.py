@@ -8,26 +8,30 @@ import decimal
 from  time import sleep 
 from conexaobd import *
 
-pessoas = ['Rafaela', 'Lucas', 'Flávia', 'Ana', 'Gabriel', 'Isabela', 'Julia', 'Carlos', 'Vinicius', 'Paula', 'Vitor']
+listaNomeFem = ['Rafaela', 'Flavia', 'Ana', 'Isabella',  'Julia', 'Paula']
+listaNomeMasc = ['Lucas', 'Gabriel', 'Carlos', 'Vinicius', 'Vitor', 'João']
+listaSexo = ['F', 'M']
 
 i = 0
 idCaptura = 0
 
 while i == 0 :
-    nome = random.choice(pessoas)
-    idade = random.randrange(15, 65)
-    altura = decimal.Decimal(random.randrange(150, 195))/100
-
-    if (nome == "Lucas" or nome == "Gabriel" or nome == "Carlos" or nome == "Vinicius" or nome == "Vitor") :
-        sexo = "M"
+    sexo = random.choice(listaSexo)
+    
+    if (sexo == 'F'):
+        nome = random.choice(listaNomeFem)
     else:
-        sexo = "F"
+        nome = random.choice(listaNomeMasc)
+
+    idade = random.randrange(15, 65)
+
+    altura = decimal.Decimal(random.randrange(150, 195))/100
 
     idCaptura += 1
 
     insert_db(idCaptura, nome, idade, sexo, altura)
     
-    print("\n" * 100)
+    print("\n" * 2)
 
     print("-"*45, "//", "-"*45)
     print(' '*30, "CAPTURA DE DADOS DE USUÁRIOS")
